@@ -57,4 +57,4 @@ docker compose up -d        # Splunk Web on http://localhost:8000
 > Lab use only. Run the attack script only on machines you own, on an isolated network.
 
 ---
-**Fabian Hewitt** · CompTIA Security+ · Splunk Core Certified User · [LinkedIn](https://www.linkedin.com/in/fabianhewitt)
+**Fabian Hewitt** · CompTIA Security+ · Splunk Core Certified Power User · [LinkedIn](https://www.linkedin.com/in/fabian-hewitt-792712250)
