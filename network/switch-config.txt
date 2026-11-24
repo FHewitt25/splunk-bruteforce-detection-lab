@@ -1,0 +1,21 @@
+! Cisco IOS: isolated lab segment (VLAN 10)
+enable
+configure terminal
+vlan 10
+ name SPLUNK_LAB
+ exit
+interface vlan 10
+ ip address 192.168.1.1 255.255.255.0
+ no shutdown
+ exit
+interface range gigabitethernet 0/1 - 21
+ switchport mode access
+ switchport access vlan 10
+ no shutdown
+end
+write memory
+
+! Hosts (static IPv4, gateway 192.168.1.1)
+!   SOC analyst / Splunk receiver : 192.168.1.10
+!   Endpoint (victim) + UF        : 192.168.1.11
+! Windows Firewall on the receiver: allow inbound ICMPv4 and TCP 9997
