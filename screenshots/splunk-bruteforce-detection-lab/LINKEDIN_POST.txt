@@ -1,0 +1,16 @@
+I built a mini SOC at home and attacked it on purpose.
+
+Goal: detect a brute-force login attack (MITRE ATT&CK T1110) in Splunk, the same detect → triage → respond loop a Tier 1 SOC analyst runs every shift.
+
+What I built:
+• Containerized Splunk Enterprise (Docker) on an isolated VLAN
+• Windows Security logs shipped with the Splunk Universal Forwarder
+• A PowerShell brute-force simulation against a test account
+• A dashboard (Attack Timeline + Top Targets) and a real-time account-lockout alert
+
+The best part was when it broke. My searches returned zero, and the fix wasn't the query. The forwarder was sending to the wrong port and IP. Lesson: validate the pipeline before you trust the search.
+
+Full write-up, configs, SPL searches, and incident report on GitHub
+[PASTE YOUR GITHUB REPO LINK HERE]
+
+#Cybersecurity #Splunk #SIEM #SOC #BlueTeam #HomeLab #PerScholas
